@@ -34,11 +34,11 @@ contract mintPass is ERC721, Ownable {
         _;
     }
 
-    constructor(string memory name, string memory symbol, string memory _BASE_URI)
+    constructor(string memory name, string memory symbol, string memory _BASE_URI, bytes32 merkleroot)
     ERC721(name, symbol)
     {
         BASE_URI = _BASE_URI;
-        // root = merkleroot;
+        root = merkleroot;
         _tokenIdCounter.increment();
     }
 
